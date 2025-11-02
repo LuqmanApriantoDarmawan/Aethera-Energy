@@ -27,7 +27,7 @@ const leadership = [
     name: "M. Faudzan Al Fajar",
     role: "Chief Financial Officer (CFO)",
     bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
-    image: "/team/Luqman.jpg",
+    image: "/team/Foto Fauzan.jpg",
   },
   {
     name: "M. Al Hafiz",
@@ -36,10 +36,10 @@ const leadership = [
     image: "/team/Luqman.jpg",
   },
   {
-    name: "Michael Tan",
+    name: "M. Kayla Izatta",
     role: "Chief Technology Officer (CTO)",
     bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
-    image: "/team/Luqman.jpg",
+    image: "/team/Foto Kayla.jpg",
   },
   // tambahkan 3 anggota lain di sini
 ];
