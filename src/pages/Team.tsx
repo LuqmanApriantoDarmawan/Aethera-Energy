@@ -1,28 +1,49 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Linkedin } from "lucide-react";
+import { motion } from "framer-motion"; // tambahkan import ini di atas
 
 const Team = () => {
-  const leadership = [
+const leadership = [
+  {
+    name: "Luqman Aprianto Darmawan",
+    role: "Chief Executive Officer (Founder)",
+    bio: "15+ tahun pengalaman di industri energi dengan fokus pada inovasi teknologi berkelanjutan.",
+    image: "/team/Luqman.jpg",
+  },
+  {
+    name: "Ilham Aji Pramana",
+    role: "Co-Founder & Chief Operating Officer (COO)",
+    bio: "Ahli AI dan machine learning dengan publikasi internasional di bidang optimasi energi.",
+    image: "/team/Luqman.jpg",
+  },
+  {
+    name: "Bagus Putra Andika",
+    role: "Chief Energy Scientist (CES)",
+    bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
+    image: "/team/Luqman.jpg",
+  },
     {
-      name: "Dr. Ahmad Wijaya",
-      role: "Chief Executive Officer",
-      bio: "15+ tahun pengalaman di industri energi dengan fokus pada inovasi teknologi berkelanjutan.",
-      initials: "AW",
-    },
-    {
-      name: "Sarah Kusuma",
-      role: "Chief Technology Officer",
-      bio: "Ahli AI dan machine learning dengan publikasi internasional di bidang optimasi energi.",
-      initials: "SK",
-    },
-    {
-      name: "Michael Tan",
-      role: "Chief Operations Officer",
-      bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
-      initials: "MT",
-    },
-  ];
+    name: "M. Faudzan Al Fajar",
+    role: "Chief Financial Officer (CFO)",
+    bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
+    image: "/team/Luqman.jpg",
+  },
+  {
+    name: "M. Al Hafiz",
+    role: "Chief Chief Marketing Officer (CMO)",
+    bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
+    image: "/team/Luqman.jpg",
+  },
+  {
+    name: "Michael Tan",
+    role: "Chief Technology Officer (CTO)",
+    bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
+    image: "/team/Luqman.jpg",
+  },
+  // tambahkan 3 anggota lain di sini
+];
+
 
   const teams = [
     {
@@ -61,38 +82,86 @@ const Team = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Tim Kami</h1>
-            <p className="text-xl text-muted-foreground">
-              Bertemu dengan para ahli yang mendorong inovasi energi berkelanjutan di AETHERA Energy
+            <p className="text-xl text-muted-foreground text-center">
+              Bertemu dengan para ahli yang berkomitmen menciptakan inovasi dalam teknologi energi berkelanjutan.
+              Bersama di AETHERA Energy, kami memadukan keahlian, penelitian, dan dedikasi untuk membangun masa depan
+              yang lebih hijau dan efisien bagi dunia.
             </p>
           </div>
         </div>
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Tim Kepemimpinan</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {leadership.map((leader, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-8">
-                  <Avatar className="w-24 h-24 mx-auto mb-4">
-                    <AvatarFallback className="text-2xl bg-primary text-primary-foreground">
-                      {leader.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <h3 className="text-xl font-semibold mb-1">{leader.name}</h3>
-                  <p className="text-primary font-medium mb-3">{leader.role}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{leader.bio}</p>
-                  <button className="text-primary hover:text-primary/80 transition-colors">
-                    <Linkedin className="h-5 w-5 mx-auto" />
-                  </button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+     <section className="py-20">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold mb-12 text-center">Tim Kepemimpinan Utama</h2>
+
+    {/* === Baris Atas: CEO & Founder === */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto mb-16">
+      {leadership
+        .filter((leader) => leader.role.includes("Founder") || leader.role.includes("CEO"))
+        .map((leader, index) => (
+          <Card
+            key={index}
+            className="text-center bg-gradient-to-br from-primary/10 to-background border-primary/30 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl"
+          >
+            <CardContent className="pt-10 pb-8">
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="relative flex justify-center"
+              >
+                <img
+                  src={leader.image}
+                  alt={leader.name}
+                  className="w-36 h-36 rounded-full object-cover border-4 border-primary/50 shadow-lg"
+                />
+              </motion.div>
+
+              <h3 className="text-2xl font-bold mt-6 mb-1">{leader.name}</h3>
+              <p className="text-primary font-semibold mb-3">{leader.role}</p>
+              <p className="text-base text-muted-foreground mb-4">{leader.bio}</p>
+              <button className="text-primary hover:text-primary/80 transition-colors">
+                <Linkedin className="h-6 w-6 mx-auto" />
+              </button>
+            </CardContent>
+          </Card>
+        ))}
+    </div>
+
+    {/* === Baris Bawah: Anggota Tim Lain === */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      {leadership
+        .filter(
+          (leader) =>
+            !leader.role.includes("Founder") && !leader.role.includes("CEO")
+        )
+        .map((leader, index) => (
+          <Card key={index} className="text-center hover:shadow-lg transition-all duration-300">
+            <CardContent className="pt-8">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="relative flex justify-center"
+              >
+                <img
+                  src={leader.image}
+                  alt={leader.name}
+                  className="w-28 h-28 rounded-full object-cover border-2 border-primary/40 shadow-md"
+                />
+              </motion.div>
+              <h3 className="text-lg font-semibold mt-5 mb-1">{leader.name}</h3>
+              <p className="text-primary font-medium mb-3">{leader.role}</p>
+              <p className="text-sm text-muted-foreground mb-4">{leader.bio}</p>
+              <button className="text-primary hover:text-primary/80 transition-colors">
+                <Linkedin className="h-5 w-5 mx-auto" />
+              </button>
+            </CardContent>
+          </Card>
+        ))}
+    </div>
+  </div>
+</section>
 
       {/* Departments */}
       <section className="py-20 bg-muted">

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react";
-import logo from "@/assets/aethera-logo.png";
+import logo from "@/assets/Company LOGO.png";
 
 const Footer = () => {
   return (
@@ -9,10 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <img src={logo} alt="AETHERA Energy" className="h-10 mb-4" />
-            <p className="text-sm text-muted-foreground mb-4">
-              Smart Energy, Better Future.
-            </p>
+            <img src={logo} alt="AETHERA Energy" className="h-16 mb-4" />
+
             <p className="text-sm text-muted-foreground">
               Mendorong transisi energi bersih dengan teknologi AI yang inovatif.
             </p>

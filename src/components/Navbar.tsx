@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/aethera-logo.png";
+import logo from "@/assets/Company LOGO.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center group">
-            <img src={logo} alt="AETHERA Energy" className="h-12 transition-transform duration-300 group-hover:scale-110" />
+            <img src={logo} alt="AETHERA Energy" className="h-16 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation */}
