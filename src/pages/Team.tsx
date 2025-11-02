@@ -31,7 +31,7 @@ const leadership = [
   },
   {
     name: "M. Al Hafiz",
-    role: "Chief Chief Marketing Officer (CMO)",
+    role: "Chief Marketing Officer (CMO)",
     bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
     image: "/team/Foto Hafiz.jpg",
   },
