@@ -36,12 +36,12 @@ Dibangun dengan desain **modern, clean, dan responsif**, website ini berfungsi s
 
 ## 📂 Struktur Folder (Singkat)
 src/
-├── assets/ # Logo, gambar, dan ikon
-├── components/ # Komponen UI (navbar, footer, dsb)
-├── pages/ # Halaman utama website
-├── styles/ # File styling tambahan
-├── App.jsx # Root aplikasi React
-└── main.jsx # Entry point utama
+-├── assets/ # Logo, gambar, dan ikon
+-├── components/ # Komponen UI (navbar, footer, dsb)
+-├── pages/ # Halaman utama website
+-├── styles/ # File styling tambahan
+-├── App.jsx # Root aplikasi React
+-└── main.jsx # Entry point utama
 
 
 ---
