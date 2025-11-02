@@ -37,24 +37,24 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-background via-accent/20 to-background py-24 md:py-32">
+      <section className="relative bg-gradient-to-br from-background via-accent/20 to-background py-24 md:py-32 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground animate-fade-in">
               Smart Energy, Better Future
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               Solusi energi cerdas berbasis AI untuk mendorong transisi menuju energi bersih dan berkelanjutan
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
               <Link to="/contact">
-                <Button size="lg" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   Mulai Konsultasi
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
               <Link to="/technology">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   Pelajari Teknologi Kami
                 </Button>
               </Link>
@@ -68,7 +68,11 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <div 
+                key={index} 
+                className="text-center animate-fade-in-up hover:scale-110 transition-transform duration-300"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
                 <div className="text-sm md:text-base opacity-90">{stat.label}</div>
               </div>
@@ -80,7 +84,7 @@ const Home = () => {
       {/* Features Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Mengapa Memilih AETHERA Energy?
             </h2>
@@ -91,9 +95,13 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="border-2 hover:border-primary transition-colors">
+              <Card 
+                key={index} 
+                className="border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-fade-in-up group"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="pt-6">
-                  <feature.icon className="h-12 w-12 text-primary mb-4" />
+                  <feature.icon className="h-12 w-12 text-primary mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                 </CardContent>
@@ -106,7 +114,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Siap Bertransisi ke Energi Cerdas?
             </h2>
@@ -114,9 +122,9 @@ const Home = () => {
               Bergabunglah dengan lebih dari 50 perusahaan yang telah mempercayai AETHERA Energy untuk solusi energi berkelanjutan mereka.
             </p>
             <Link to="/contact">
-              <Button size="lg">
+              <Button size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-xl group">
                 Hubungi Kami Sekarang
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
               </Button>
             </Link>
           </div>

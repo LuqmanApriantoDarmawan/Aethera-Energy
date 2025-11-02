@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,7 +6,16 @@ import logo from "@/assets/aethera-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "Beranda", path: "/" },
@@ -21,11 +30,11 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className={`sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt="AETHERA Energy" className="h-12" />
+          <Link to="/" className="flex items-center group">
+            <img src={logo} alt="AETHERA Energy" className="h-12 transition-transform duration-300 group-hover:scale-110" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -34,9 +43,9 @@ const Navbar = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left ${
                   isActive(item.path)
-                    ? "text-primary bg-accent"
+                    ? "text-primary bg-accent after:scale-x-100"
                     : "text-foreground hover:text-primary hover:bg-accent/50"
                 }`}
               >
@@ -44,13 +53,13 @@ const Navbar = () => {
               </Link>
             ))}
             <Link to="/contact">
-              <Button className="ml-4">Hubungi Kami</Button>
+              <Button className="ml-4 transition-all duration-300 hover:scale-105 hover:shadow-lg">Hubungi Kami</Button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 transition-transform duration-300 hover:scale-110"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -60,23 +69,24 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden pb-4 space-y-2">
-            {navItems.map((item) => (
+          <div className="lg:hidden pb-4 space-y-2 animate-fade-in">
+            {navItems.map((item, index) => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`block px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:translate-x-2 animate-slide-in-right ${
                   isActive(item.path)
                     ? "text-primary bg-accent"
                     : "text-foreground hover:text-primary hover:bg-accent/50"
                 }`}
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
                 {item.name}
               </Link>
             ))}
             <Link to="/contact" onClick={() => setIsOpen(false)}>
-              <Button className="w-full mt-2">Hubungi Kami</Button>
+              <Button className="w-full mt-2 transition-all duration-300 hover:scale-105">Hubungi Kami</Button>
             </Link>
           </div>
         )}
