@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
+# 🌿 AETHERA Energy Website
 
-## Project info
+**Smart Energy, Better Future**  
+Website resmi AETHERA Energy — perusahaan inovasi energi bersih yang berfokus pada solusi cerdas dan berkelanjutan untuk masa depan yang lebih baik.
 
-**URL**: https://lovable.dev/projects/2d168c54-ccb3-4e75-b297-6e015234feba
+---
 
-## How can I edit this code?
+## 🚀 Deskripsi Proyek
+Website ini dibuat untuk memperkenalkan **AETHERA Energy** sebagai perusahaan teknologi energi yang berkomitmen pada keberlanjutan.  
+Dibangun dengan desain **modern, clean, dan responsif**, website ini berfungsi sebagai media informasi, profil perusahaan, dan wadah komunikasi publik.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🧩 Fitur Utama
+- **🏠 Beranda:** Menampilkan tagline “Smart Energy, Better Future” dengan visual modern.  
+- **💡 Tentang Kami:** Menjelaskan visi, misi, dan nilai perusahaan.  
+- **⚙️ Teknologi:** Informasi inovasi dan solusi energi yang dikembangkan.  
+- **🌱 Keberlanjutan:** Program dan inisiatif ramah lingkungan AETHERA.  
+- **👥 Tim Kami:** Profil singkat tim profesional di balik AETHERA.  
+- **🤝 Mitra & Berita:** Kolaborasi dan informasi terkini.  
+- **💼 Karir:** Lowongan dan peluang bergabung dengan AETHERA.  
+- **📩 Hubungi Kami:** Formulir kontak yang terintegrasi dan mudah diakses.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2d168c54-ccb3-4e75-b297-6e015234feba) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Teknologi yang Digunakan
+| Kategori | Teknologi |
+|-----------|------------|
+| **Frontend** | React.js + Tailwind CSS |
+| **UI Library** | shadcn/ui, lucide-react |
+| **Animasi** | Framer Motion |
+| **Desain** | Modern minimalist, teal & white color palette |
+| **Build Tool** | Vite |
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📂 Struktur Folder (Singkat)
+src/
+├── assets/ # Logo, gambar, dan ikon
+├── components/ # Komponen UI (navbar, footer, dsb)
+├── pages/ # Halaman utama website
+├── styles/ # File styling tambahan
+├── App.jsx # Root aplikasi React
+└── main.jsx # Entry point utama
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🧑‍💻 Cara Menjalankan Proyek
+```bash
+# 1️⃣ Clone repositori
+git clone https://github.com/username/aethera-energy.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2️⃣ Masuk ke folder proyek
+cd aethera-energy
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3️⃣ Instal dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4️⃣ Jalankan proyek
 npm run dev
 ```
+## 🎨 Desain dan Branding
 
-**Edit a file directly in GitHub**
+Warna utama:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+🟩 Teal / #1B8A83 — melambangkan energi dan keberlanjutan
 
-**Use GitHub Codespaces**
+⚪ Putih — kesucian dan transparansi
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🌫️ Abu muda — keseimbangan dan modernitas
 
-## What technologies are used for this project?
+Font: Sans-serif modern (Inter / Poppins)
 
-This project is built with:
+## 📢 Tentang AETHERA Energy
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+AETHERA Energy adalah perusahaan yang bergerak di bidang energi cerdas dan berkelanjutan.
+Kami berfokus pada inovasi teknologi untuk menghadirkan solusi energi efisien, ramah lingkungan, dan berorientasi masa depan.
 
-## How can I deploy this project?
+## 📞 Kontak
 
-Simply open [Lovable](https://lovable.dev/projects/2d168c54-ccb3-4e75-b297-6e015234feba) and click on Share -> Publish.
+📧 info@aetheraenergy.com
 
-## Can I connect a custom domain to my Lovable project?
+🌐 www.aetheraenergy.com
 
-Yes, you can!
+## 📜 Lisensi
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Luqman Aprianto Darmawan @ 2025
+.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+💚 Dibangun dengan semangat inovasi untuk masa depan energi yang lebih cerdas dan berkelanjutan.
