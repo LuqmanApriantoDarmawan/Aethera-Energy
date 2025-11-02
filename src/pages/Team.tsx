@@ -15,13 +15,13 @@ const leadership = [
     name: "Ilham Aji Pramana",
     role: "Co-Founder & Chief Operating Officer (COO)",
     bio: "Ahli AI dan machine learning dengan publikasi internasional di bidang optimasi energi.",
-    image: "/team/Luqman.jpg",
+    image: "/team/Foto Ilham.jpg",
   },
   {
     name: "Bagus Putra Andika",
     role: "Chief Energy Scientist (CES)",
     bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
-    image: "/team/Luqman.jpg",
+    image: "/team/Foto Bagus.jpg",
   },
     {
     name: "M. Faudzan Al Fajar",
@@ -33,7 +33,7 @@ const leadership = [
     name: "M. Al Hafiz",
     role: "Chief Chief Marketing Officer (CMO)",
     bio: "Pengalaman 20+ tahun dalam manajemen operasional perusahaan energi skala besar.",
-    image: "/team/Luqman.jpg",
+    image: "/team/Foto Hafiz.jpg",
   },
   {
     name: "M. Kayla Izatta",
@@ -92,7 +92,7 @@ const leadership = [
       </section>
 
       {/* Leadership Team */}
-     <section className="py-20">
+    <section className="py-20">
   <div className="container mx-auto px-4">
     <h2 className="text-3xl font-bold mb-12 text-center">Tim Kepemimpinan Utama</h2>
 
