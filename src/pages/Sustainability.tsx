@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Leaf, Recycle, Wind, Sun, Droplet, TreePine } from "lucide-react";
+import { motion } from "framer-motion";
+import sustainabilityImage from "@/assets/sustainability.jpg";
 
 const Sustainability = () => {
   const commitments = [
@@ -44,15 +46,26 @@ const Sustainability = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary/20 via-background to-accent/20 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${sustainabilityImage})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto text-center"
+          >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Keberlanjutan & Green Vision</h1>
             <p className="text-xl text-muted-foreground">
               Komitmen kami untuk menciptakan masa depan yang lebih hijau dan berkelanjutan bagi generasi mendatang
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -79,13 +92,28 @@ const Sustainability = () => {
           <h2 className="text-3xl font-bold mb-12 text-center">Komitmen Keberlanjutan</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {commitments.map((item, index) => (
-              <Card key={index} className="border-2 hover:border-secondary transition-colors">
-                <CardContent className="pt-6">
-                  <item.icon className="h-12 w-12 text-secondary mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                whileHover={{ y: -10 }}
+              >
+                <Card className="hover:shadow-2xl transition-all duration-300 border-secondary/20 h-full group overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <CardContent className="pt-6 relative z-10">
+                    <motion.div
+                      whileHover={{ scale: 1.2, rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <item.icon className="h-12 w-12 text-secondary mb-4" />
+                    </motion.div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-secondary transition-colors">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -97,13 +125,26 @@ const Sustainability = () => {
           <h2 className="text-3xl font-bold mb-12 text-center">Dampak Nyata yang Kami Ciptakan</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {impacts.map((impact, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">
+              <motion.div 
+                key={index} 
+                className="text-center cursor-pointer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                whileHover={{ scale: 1.1, rotate: [0, -3, 3, -3, 0] }}
+              >
+                <motion.div 
+                  className="text-4xl md:text-5xl font-bold text-secondary mb-2"
+                  initial={{ scale: 1 }}
+                  whileInView={{ scale: [1, 1.3, 1] }}
+                  transition={{ duration: 0.7, delay: index * 0.2 }}
+                >
                   {impact.value}
-                </div>
+                </motion.div>
                 <div className="text-lg font-semibold mb-2">{impact.label}</div>
                 <div className="text-sm text-muted-foreground">{impact.description}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

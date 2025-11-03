@@ -1,6 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Brain, Activity, BarChart3, Shield, Zap, Network } from "lucide-react";
+import { motion } from "framer-motion";
+import aiTechImage from "@/assets/ai-technology.jpg";
+import pipelineImage from "@/assets/feature-pipeline.jpg";
 
 const Technology = () => {
   const features = [
@@ -38,15 +41,26 @@ const Technology = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-background via-accent/20 to-background py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{ backgroundImage: `url(${aiTechImage})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto text-center"
+          >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Teknologi & Inovasi</h1>
             <p className="text-xl text-muted-foreground">
               Platform energi cerdas yang didukung oleh teknologi AI terdepan untuk optimasi maksimal
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -62,13 +76,27 @@ const Technology = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="border-2 hover:border-primary transition-colors">
-                <CardContent className="pt-6">
-                  <feature.icon className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+              >
+                <Card className="hover:shadow-2xl transition-all duration-300 border-primary/20 h-full group">
+                  <CardContent className="pt-6">
+                    <motion.div
+                      whileHover={{ scale: 1.2, rotate: 10 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <feature.icon className="h-12 w-12 text-primary mb-4 group-hover:text-secondary transition-colors" />
+                    </motion.div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
